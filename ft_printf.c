@@ -6,12 +6,11 @@
 /*   By: bryeap <bryeap@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 15:43:17 by bryeap            #+#    #+#             */
-/*   Updated: 2024/06/28 14:20:51 by bryeap           ###   ########.fr       */
+/*   Updated: 2024/06/28 15:44:15 by bryeap           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 int	ft_format(va_list args, const char format)
 {

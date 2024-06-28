@@ -6,7 +6,7 @@
 /*   By: bryeap <bryeap@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 16:34:30 by bryeap            #+#    #+#             */
-/*   Updated: 2024/06/28 14:28:53 by bryeap           ###   ########.fr       */
+/*   Updated: 2024/06/28 15:42:44 by bryeap           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdarg.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdint.h>
 
 int		ft_printf(const char *str, ...);
 int		ft_print_char(int c);
