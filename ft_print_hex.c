@@ -3,18 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_hex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brian <brian@student.42.fr>                +#+  +:+       +#+        */
+/*   By: bryeap <bryeap@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 20:18:14 by brian             #+#    #+#             */
-/*   Updated: 2024/06/27 20:46:04 by brian            ###   ########.fr       */
+/*   Updated: 2024/06/28 14:20:03 by bryeap           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_hex_len(unsigned int num)
+void	ft_putchar(char c)
 {
-	int len;
+	write(1, &c, 1);
+}
+
+int	ft_hex_len(unsigned int num)
+{
+	int	len;
 
 	len = 0;
 	while (num != 0)
@@ -46,7 +51,7 @@ void	ft_put_hex(unsigned int num, const char format)
 	}
 }
 
-int ft_print_hex(unsigned int num, const char format)
+int	ft_print_hex(unsigned int num, const char format)
 {
 	if (num == 0)
 		return (write(1, "0", 1));

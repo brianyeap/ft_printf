@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brian <brian@student.42.fr>                +#+  +:+       +#+        */
+/*   By: bryeap <bryeap@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 15:43:17 by bryeap            #+#    #+#             */
-/*   Updated: 2024/06/28 14:06:10 by brian            ###   ########.fr       */
+/*   Updated: 2024/06/28 14:20:51 by bryeap           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>
 
-int ft_format(va_list args, const char format)
+int	ft_format(va_list args, const char format)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	if (format == 'c')
@@ -34,15 +34,14 @@ int ft_format(va_list args, const char format)
 		len += ft_print_hex(va_arg(args, unsigned int), format);
 	else if (format == '%')
 		len += write(1, "%", 1);
-
 	return (len);
 }
 
-int ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
-	int i;
-	int len;
-	va_list args;
+	int		i;
+	int		len;
+	va_list	args;
 
 	va_start(args, format);
 	i = 0;
@@ -59,10 +58,10 @@ int ft_printf(const char *format, ...)
 	return (len);
 }
 
-int main()
-{
-	ft_printf("%c %c %c", 'a', 'b', 'c');
-	// printf("%c, %s", 'a', "String");
+// int main()
+// {
+// 	ft_printf("%c %c %c", 'a', 'b', 'c');
+// 	// printf("%c, %s", 'a', "String");
 
-	return (0);
-}
+// 	return (0);
+// }

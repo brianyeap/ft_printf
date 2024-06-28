@@ -3,29 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   print_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brian <brian@student.42.fr>                +#+  +:+       +#+        */
+/*   By: bryeap <bryeap@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 17:04:43 by brian             #+#    #+#             */
-/*   Updated: 2024/06/27 23:55:21 by brian            ###   ########.fr       */
+/*   Updated: 2024/06/28 14:26:42 by bryeap           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_print_char(int c)
+int	ft_print_char(int c)
 {
 	write(1, &c, 1);
 	return (1);
 }
 
-void ft_putchar(char c)
+void	ft_putstr(char *str)
 {
-	write(1, &c, 1);
-}
-
-void ft_putstr(char *str)
-{
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -35,7 +30,7 @@ void ft_putstr(char *str)
 	}
 }
 
-int ft_print_str(char *str)
+int	ft_print_str(char *str)
 {
 	int	i;
 
@@ -53,30 +48,13 @@ int ft_print_str(char *str)
 	return (i);
 }
 
-int ft_printnbr(int n)
+int	ft_printnbr(int n)
 {
-	char 	*num;
-	int 	len;
+	char	*num;
+	int		len;
 
 	num = ft_itoa(n);
 	len = ft_print_str(num);
 	free(num);
-	return (len);
-}
-
-int ft_print_unsigned_int(unsigned int n)
-{
-	char	*num;
-	int 	len;
-
-	len = 0;
-	if (n == 0)
-		len += write(1, "0", 1);
-	else
-	{
-		num = ft_itoa(n);
-		len = ft_print_str(num);
-		free(num);
-	}
 	return (len);
 }

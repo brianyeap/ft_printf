@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_ptr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brian <brian@student.42.fr>                +#+  +:+       +#+        */
+/*   By: bryeap <bryeap@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 19:08:36 by brian             #+#    #+#             */
-/*   Updated: 2024/06/27 19:38:16 by brian            ###   ########.fr       */
+/*   Updated: 2024/06/28 14:22:40 by bryeap           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_ptr_len(uintptr_t num)
+int	ft_ptr_len(uintptr_t num)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	while (num != 0)
@@ -25,9 +25,8 @@ int ft_ptr_len(uintptr_t num)
 	return (len);
 }
 
-void ft_put_ptr(uintptr_t num)
+void	ft_put_ptr(uintptr_t num)
 {
-
 	if (num >= 16)
 	{
 		ft_put_ptr(num / 16);
@@ -44,9 +43,9 @@ void ft_put_ptr(uintptr_t num)
 	}
 }
 
-int ft_print_ptr(unsigned long long ptr)
+int	ft_print_ptr(unsigned long long ptr)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	len += write(1, "0x", 2);
